@@ -4,7 +4,7 @@
     <div class="col-md-6">
         <div class="card mx-4">
             <div class="card-body p-4">
-                <h1>{{ config('app.name', 'Laravel') }}</h1>
+                <h1>UCSatgas</h1>
 
                 <p class="text-muted">Login</p>
 
@@ -51,7 +51,7 @@
                         <div class="form-check checkbox">
                             <input class="form-check-input" name="remember" type="checkbox" id="remember" style="vertical-align: middle;" />
                             <label class="form-check-label" for="remember" style="vertical-align: middle;">
-                                {{ trans('global.remember_me') }}
+                                Remember Me
                             </label>
                         </div>
                     </div>
@@ -59,13 +59,13 @@
                     <div class="row">
                         <div class="col-6">
                             <button type="submit" class="btn btn-primary px-4">
-                                {{ trans('global.login') }}
+                                Login
                             </button>
                         </div>
                         <div class="col-6 text-right">
                             @if(Route::has('password.request'))
                                 <a class="btn btn-link px-0" href="{{ route('password.request') }}">
-                                    {{ trans('global.forgot_password') }}
+                                    Password
                                 </a><br>
                             @endif
 

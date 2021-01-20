@@ -1,17 +1,15 @@
 @extends('layouts.admin')
 @section('content')
-@can('country_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.countries.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.country.title_singular') }}
+            <a class="btn btn-success" href="{{ route('admin.satgas.create') }}">
+                Add
             </a>
         </div>
     </div>
-@endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.country.title_singular') }} {{ trans('global.list') }}
+        SURAT TUGAS
     </div>
 
     <div class="card-body">
@@ -23,13 +21,10 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.country.fields.id') }}
+                            Id
                         </th>
                         <th>
-                            {{ trans('cruds.country.fields.name') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.country.fields.short_code') }}
+                            Waktu
                         </th>
                         <th>
                             &nbsp;
@@ -37,40 +32,31 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($countries as $key => $country)
-                        <tr data-entry-id="{{ $country->id }}">
+                    @foreach($satgas as $key => $value)
+                        <tr data-entry-id="{{ $value->id }}">
                             <td>
 
                             </td>
                             <td>
-                                {{ $country->id ?? '' }}
+                                {{ $value->id ?? '' }}
                             </td>
                             <td>
-                                {{ $country->name ?? '' }}
+                                {{ $value->waktu ?? '' }}
                             </td>
                             <td>
-                                {{ $country->short_code ?? '' }}
-                            </td>
-                            <td>
-                                @can('country_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.countries.show', $country->id) }}">
-                                        {{ trans('global.view') }}
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.satgas.show', $value->id) }}">
+                                        View
                                     </a>
-                                @endcan
 
-                                @can('country_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.countries.edit', $country->id) }}">
-                                        {{ trans('global.edit') }}
-                                    </a>
-                                @endcan
+                                    <!-- <a class="btn btn-xs btn-info" href="{{ route('admin.satgas.edit', $value->id) }}">
+                                        Edit
+                                    </a> -->
 
-                                @can('country_delete')
-                                    <form action="{{ route('admin.countries.destroy', $country->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.satgas.destroy', $value->id) }}" method="POST" onsubmit="return confirm('Are You Sure?');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                        <input type="submit" class="btn btn-xs btn-danger" value="Delete">
                                     </form>
-                                @endcan
 
                             </td>
 

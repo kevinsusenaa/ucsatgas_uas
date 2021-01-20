@@ -7,7 +7,15 @@
                     <i class="nav-icon fas fa-fw fa-tachometer-alt">
 
                     </i>
-                    {{ trans('global.dashboard') }}
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route("admin.satgas.index") }}" class="nav-link">
+                    <i class="nav-icon fas fa-fw fa-tachometer-alt">
+
+                    </i>
+                    Surat Tugas
                 </a>
             </li>
             @can('user_management_access')
@@ -16,26 +24,17 @@
                         <i class="fa-fw fas fa-users nav-icon">
 
                         </i>
-                        {{ trans('cruds.userManagement.title') }}
+                        User Management
                     </a>
                     <ul class="nav-dropdown-items">
-                        @can('permission_access')
-                            <li class="nav-item">
-                                <a href="{{ route("admin.permissions.index") }}" class="nav-link {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
-                                    <i class="fa-fw fas fa-unlock-alt nav-icon">
-
-                                    </i>
-                                    {{ trans('cruds.permission.title') }}
-                                </a>
-                            </li>
-                        @endcan
+                       
                         @can('role_access')
                             <li class="nav-item">
                                 <a href="{{ route("admin.roles.index") }}" class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
                                     <i class="fa-fw fas fa-briefcase nav-icon">
 
                                     </i>
-                                    {{ trans('cruds.role.title') }}
+                                    Role
                                 </a>
                             </li>
                         @endcan
@@ -45,7 +44,7 @@
                                     <i class="fa-fw fas fa-user nav-icon">
 
                                     </i>
-                                    {{ trans('cruds.user.title') }}
+                                    User
                                 </a>
                             </li>
                         @endcan
@@ -61,7 +60,7 @@
                         <a class="nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'active' : '' }}" href="{{ route('profile.password.edit') }}">
                             <i class="fa-fw fas fa-key nav-icon">
                             </i>
-                            {{ trans('global.change_password') }}
+                            Change Password
                         </a>
                     </li>
                 @endcan
@@ -71,7 +70,7 @@
                     <i class="nav-icon fas fa-fw fa-sign-out-alt">
 
                     </i>
-                    {{ trans('global.logout') }}
+                    Logout
                 </a>
             </li>
         </ul>

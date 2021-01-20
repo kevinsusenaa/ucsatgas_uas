@@ -19,6 +19,7 @@ Route::group([
     'middleware' => ['auth']
 ], function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/pdf/{id}', 'HomeController@pdf')->name('pdf');
 });
 
 Route::group([
@@ -40,17 +41,11 @@ Route::group([
     Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
     Route::resource('users', 'UsersController');
 
-    // Countries
+    
     Route::delete('countries/destroy', 'CountriesController@massDestroy')->name('countries.massDestroy');
     Route::resource('countries', 'CountriesController');
 
-    // Cities
-    Route::delete('cities/destroy', 'CitiesController@massDestroy')->name('cities.massDestroy');
-    Route::resource('cities', 'CitiesController');
-
-    // Trips
-    Route::delete('trips/destroy', 'TripsController@massDestroy')->name('trips.massDestroy');
-    Route::resource('trips', 'TripsController');
+    Route::resource('satgas', 'SatgasController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Change password
