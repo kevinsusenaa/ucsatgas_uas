@@ -48,9 +48,9 @@
             <table class="table" id="detail">
                 <thead>
                     <tr>
-                        <th scope="col">Name</th>
+                        <th scope="col">Nama</th>
                         <th scope="col">NIK</th>
-                        <th scope="col">Comment</th>
+                        <th scope="col">Keterangan</th>
                         <th></th>
                     </tr>
                 </thead>
