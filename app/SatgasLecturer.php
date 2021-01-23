@@ -10,9 +10,9 @@ class SatgasLecturer extends Model
 
     protected $fillable = [
         'satgas_id',
-        'name',
+        'nama',
         'nik',
-        'comment',
+        'keterangan',
     ];
 
 

@@ -21,8 +21,8 @@
         <thead>
             <tr>
                 <th style="border: 1px solid black;">NIK</th>
-                <th style="border: 1px solid black;">Name</th>
-                <th style="border: 1px solid black;">Comment</th>
+                <th style="border: 1px solid black;">Nama</th>
+                <th style="border: 1px solid black;">Keterangan</th>
             </tr>
         </thead>
         <tbody>
